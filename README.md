@@ -2,7 +2,7 @@
 
 ## APEX Programming Language
 
-## LWC
+## [LWC](LWC.md)
 
 ## [Salesforce Integration](SalesforceIntegration.md)
 
