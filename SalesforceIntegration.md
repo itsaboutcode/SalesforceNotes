@@ -1,4 +1,4 @@
-# Integration
+# Salesforce Integration Guide/Notes
 
 - It's needed when we need to connect 2 or more different systems e.g; if you wanted to show your dropbox files in your salesforce org page.
 
@@ -86,12 +86,36 @@ if(response.getStatusCode() == 200) {
 
 <img width="1420" alt="Add URL FORM" src="https://user-images.githubusercontent.com/204423/160992447-fe32835d-a434-43b4-bce3-7088f21ea29f.png">
 
+### Example SOAP Callout
 
-## Terminologies
+#### WSDL
 
-### OpenAPI
+- A **WSDL** is an **XML document** that **describes** a web service. 
+- It tells about the functions that you can implement or exposed to the client e.g; getRecipe etc. 
+- It actually stands for **Web Services Description/Definition Language**.
 
-- An api for which you don't need to authorize yourself to make the call. [Spoonacular](https://spoonacular.com/food-api/docs) is one such example.
+#### SOAP
+
+- **SOAP** is an **XML-based protocol** that lets you **exchange info** over a particular protocol (can be HTTP or SMTP, for example) between applications. 
+- It stands for **Simple Object Access Protocol** and uses XML for its messaging format to relay the information.
+
+#### Real life analogy to WSDL and SOAP.
+
+**WSDL:** When we go to a restaurant we see the **Menu Items**, those are the WSDL's
+
+**Proxy Classes:** Now after seeing the Menu Items we make up our Mind. So, basically we make Proxy classes based on WSDL Document.
+
+**SOAP:** Then when we actually order the food based on the Menu's. Meaning we use proxy classes to call upon the service methods which is done using SOAP.
+
+
+## Terminologies 
+
+- **OpenAPI:** An api for which you don't need to authorize yourself to make the call. [Spoonacular](https://spoonacular.com/food-api/docs) is one such example.
+- Request
+- Response
+- Statuscode
+- Endpoint
+- Callout
 
 # Reference
 
