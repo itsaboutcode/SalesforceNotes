@@ -26,6 +26,8 @@
 - PATCH - Update existing records.
 - Delete - Delete existing records.
 
+## Making Request
+
 ### Example REST Callout
 
 ```java
@@ -58,7 +60,7 @@ if(response.getStatusCode() == 200) {
 }
 ```
 
-## Making Request Using Developer Console
+### Making Request Using Developer Console
 
 - You can run the above code in developer console. Go to developer console, and from there, click on `Debug` -> `Open Execute Anonymous Window`
 
@@ -78,8 +80,14 @@ if(response.getStatusCode() == 200) {
 
 <img width="617" alt="Unauthorized Endpoint Error" src="https://user-images.githubusercontent.com/204423/160989008-67946867-72bc-4526-95f3-293f6f6a255e.png">
 
+- Now to make request, you need to add your site in **Remote site settings**. You can go there by visiting `Setup->Security->Remote Site Settings`
 
-# Terminologies
+<img width="1426" alt="Remote Site Settings" src="https://user-images.githubusercontent.com/204423/160991942-3c73d9ec-f11e-43dd-8d9f-d132a5a3bf89.png">
+
+<img width="1420" alt="Add URL FORM" src="https://user-images.githubusercontent.com/204423/160992447-fe32835d-a434-43b4-bce3-7088f21ea29f.png">
+
+
+## Terminologies
 
 ### OpenAPI
 
