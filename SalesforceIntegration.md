@@ -115,8 +115,15 @@ if(response.getStatusCode() == 200) {
 
 - Select the WSDL file and click `Parse WSDL`
 
+<img width="1173" alt="Select WSDL File" src="https://user-images.githubusercontent.com/204423/161051062-41d578bc-a410-4f1b-aa9f-08f6314dfecf.png">
 
+- Now you will show the classes extracted from WSDL file. You get the opportinuty to change the name of classes before classes are created.
 
+<img width="1155" alt="Classes Extrated" src="https://user-images.githubusercontent.com/204423/161051368-cea9ab37-0d88-4867-95a9-03e3ea89a9f6.png">
+
+- For each generated class, a second class is created with the same name and the prefix `Async`. The `CalculatorServices` class is for synchronous callouts. The `AsyncCalculatorServices` class is for asynchronous callouts. 
+
+<img width="1165" alt="Final output" src="https://user-images.githubusercontent.com/204423/161051285-db185b94-dfa8-4234-9018-f4c9da9d3c9a.png">
 
 ## Terminologies 
 
