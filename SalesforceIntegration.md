@@ -58,13 +58,25 @@ if(response.getStatusCode() == 200) {
 }
 ```
 
+## Making Request Using Developer Console
+
+- You can run the above code in developer console. Go to developer console, and from there, click on `Debug` -> `Open Execute Anonymous Window`
+
+<img width="306" alt="developer-console" src="https://user-images.githubusercontent.com/204423/160990237-294dc233-f336-4bcd-9277-5a75b0c44f80.png">
+
+<img width="642" alt="debug_window" src="https://user-images.githubusercontent.com/204423/160990399-54743a34-d29c-479d-bf60-ac75c8833750.png">
+
+- In `Anonymous Window`, you can execute the code by clicking the `Execute` button at the bottom of the screen
+
+<img width="823" alt="Execute code" src="https://user-images.githubusercontent.com/204423/160990582-9c707c80-93d5-4d61-b749-ccb321dc2538.png">
+
 ### Authorize Endpoint
 
 - In Salesforce, before making any request to an external API, we need to authorize it. Otherwise we will get following error.
 
 `System.CalloutException: Unauthorized endpoint, please check Setup->Security->Remote site settings. endpoint = https://api.spoonacular.com/recipes/random`
 
-<img width="617" alt="Screenshot 2022-03-31 at 11 16 25 AM" src="https://user-images.githubusercontent.com/204423/160989008-67946867-72bc-4526-95f3-293f6f6a255e.png">
+<img width="617" alt="Unauthorized Endpoint Error" src="https://user-images.githubusercontent.com/204423/160989008-67946867-72bc-4526-95f3-293f6f6a255e.png">
 
 
 # Terminologies
