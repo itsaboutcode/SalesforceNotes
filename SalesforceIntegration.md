@@ -107,6 +107,16 @@ if(response.getStatusCode() == 200) {
 
 **SOAP:** Then when we actually order the food based on the Menu's. Meaning we use proxy classes to call upon the service methods which is done using SOAP.
 
+### Generating Proxy files using WSDL document
+
+- Go to `Setup -> Apex Classes -> Generate from WSDL`
+
+<img width="1404" alt="WSDL Apex File Generator" src="https://user-images.githubusercontent.com/204423/161012515-e459cbf7-9e38-4154-8e0c-bb3579f037e0.png">
+
+- Select the WSDL file and click `Parse WSDL`
+
+
+
 
 ## Terminologies 
 
