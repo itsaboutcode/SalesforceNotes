@@ -17,8 +17,9 @@
 - Works with XML.
 - More secure in comparision than REST.
 - Mostly used in Enterprise Applications.
+- You get a document called `WSDL`, which have all the information about request and response of any given service. It help you created request and response classes and methods with parser (in most cases). In-case of REST, you don't have any such faciltiy.
 
-### Rest Web Service Methods
+### REST Web Service Methods
 
 - GET - Retrieve the records.
 - POST - Insert the records.
@@ -91,7 +92,7 @@ if(response.getStatusCode() == 200) {
 #### WSDL
 
 - A **WSDL** is an **XML document** that **describes** a web service. 
-- It tells about the functions that you can implement or exposed to the client e.g; getRecipe etc. 
+- It tells about the functions that you can implement or exposed to the client e.g; getRecipe etc, request parameters, which are optional, which are required etc and also about the response.
 - It actually stands for **Web Services Description/Definition Language**.
 
 #### SOAP
@@ -108,6 +109,8 @@ if(response.getStatusCode() == 200) {
 **SOAP:** Then when we actually order the food based on the Menu's. Meaning we use proxy classes to call upon the service methods which is done using SOAP.
 
 ### Generating Proxy files using WSDL document
+
+You can create Apex classes using `WSDL` file but it's no different than making request to REST base call in terms of code. In the body of request, you will have to send XML in SOAP protocol and in response, you should expect XML in SOAP protocol.
 
 - Go to `Setup -> Apex Classes -> Generate from WSDL`
 
