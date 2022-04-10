@@ -1,8 +1,27 @@
 # Salesforce CLI (SFDX)
 
+## SFDX Command
+
+#### Listing all the commands
+
+```
+sfdx commands
+```
+
 #### Update the SFDX 
 
-` sfdx update `
+``` 
+sfdx update 
+```
+
+#### Getting Help on SFDX Commands
+
+```
+sfdx {command} --help
+sfdx {command} -h
+
+sfdx force:auth:web:login -h
+```
 
 
 #### Authorize an org using the web login flow
@@ -33,8 +52,15 @@ EXAMPLES
   sfdx auth:web:login -r https://MyDomainName--SandboxName.sandbox.my.salesforce.com
 ```
 
-
+#### Listing all connect orgs
+```
+sfdx force:org:list
+```
 
 # Reference
 
--[Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli)
+- [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli)
+- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.234.0.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
+- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
+- [Scratch Orgs](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs.htm)
+- [Trailhead | Build Apps Together with Package Development](https://trailhead.salesforce.com/en/content/learn/trails/sfdx_get_started)
