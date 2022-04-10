@@ -1,5 +1,7 @@
 ## [My Trailhead Account](https://trailblazer.me/id/itsaboutcode)
 
+## [Salesforce Command Line (SFDX)](sfdx.md)
+
 ## APEX Programming Language
 
 ## [LWC](LWC.md)
