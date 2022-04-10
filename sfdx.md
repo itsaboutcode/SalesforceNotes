@@ -88,7 +88,7 @@ sfdx force:project:create -n {projectname}
 sfdx force:project:create -n geolocation
 ```
 
-#### [Deploy Changes](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_source.htm#cli_reference_force_source_deploy)
+#### [Deploy Changes to Developer Edition Org or a Trailhead Playground](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_source.htm#cli_reference_force_source_deploy)
 
 ###### To deploy the source files in a directory in Developer Edition Org or a Trailhead Playground
 
@@ -111,6 +111,8 @@ $ sfdx force:lightning:component:create -n mycomponent --type lwc
 ```
 
 #### Project Vs Bundle?
+
+### Scratch Org
 
 # Reference
 
