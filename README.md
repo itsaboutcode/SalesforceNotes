@@ -2,6 +2,8 @@
 
 ## [Salesforce Command Line (SFDX)](sfdx.md)
 
+## [Lightning App Builder](LightningAppBuilder.md)
+
 ## APEX Programming Language
 
 ## [LWC](LWC.md)
