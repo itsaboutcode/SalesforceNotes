@@ -39,3 +39,4 @@ The structure of a Lightning page adapts for the device it’s viewed on. The te
 - [Extend Salesforce with Clicks, Not Code](https://help.salesforce.com/s/articleView?id=sf.extend_click_intro.htm&type=5)
 - [Trailhead | Lightning App Builder](https://trailhead.salesforce.com/content/learn/modules/lightning_app_builder)
 - [Trailhead | Quick Start: Lightning App Builder](https://trailhead.salesforce.com/en/content/learn/projects/quickstart-app-builder)
+- [Set Up and Maintain Your Salesforce Organization](https://help.salesforce.com/s/articleView?id=sf.setup_overview.htm&type=5)
