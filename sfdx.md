@@ -4,19 +4,19 @@
 
 #### Listing all the commands
 
-```
+```js
 sfdx commands
 ```
 
 #### Update the SFDX 
 
-``` 
+``` js
 sfdx update 
 ```
 
 #### Getting Help on SFDX Commands
 
-```
+```js
 sfdx {command} --help
 sfdx {command} -h
 
@@ -26,7 +26,7 @@ sfdx force:auth:web:login -h
 
 #### Authorize an org using the web login flow
 
-```
+```js
 USAGE
   $ sfdx auth:web:login [-i <string>] [-r <url>] [-d] [-s] [-a <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -56,12 +56,12 @@ EXAMPLES
 
 List all orgs you’ve created or authenticated to.
 
-```
+```js
 sfdx force:org:list
 ```
 ##### Exaple Org listing
 
-```
+```js
 === Orgs
      ALIAS     USERNAME              ORG ID              CONNECTED STATUS
 ───  ────────  ────────────────────  ──────────────────  ────────────────
@@ -71,7 +71,7 @@ sfdx force:org:list
 
 #### Opening an org
 
-```
+```js
 sfdx force:org:open // Open default org
 sfdx force:org:open --targetusername Open
 sfdx force:org:open -u DevHub
@@ -83,7 +83,7 @@ sfdx force:org:open -u MyScratchOrg
 
 This command creates a Salesforce DX project in the specified directory or the current working directory. The command creates the necessary configuration files and folders.
 
-```
+```js
 sfdx force:project:create -n {projectname}
 sfdx force:project:create -n geolocation
 ```
@@ -92,7 +92,7 @@ sfdx force:project:create -n geolocation
 
 ###### To deploy the source files in a directory in Developer Edition Org or a Trailhead Playground
 
-```
+```js
 $ sfdx force:source:deploy -p path/to/source
 $ sfdx force:source:deploy -p .\force-app\
 $ sfdx force:source:deploy --sourcepath .\force-app\
@@ -113,6 +113,12 @@ $ sfdx force:lightning:component:create -n mycomponent --type lwc
 #### Project Vs Bundle?
 
 ### Scratch Org
+
+#### Push code in Scratch Org
+
+```js
+sfdx force:source:push
+```
 
 # Reference
 
