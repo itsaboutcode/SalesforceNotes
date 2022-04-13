@@ -35,6 +35,7 @@ A component that renders UI has 2 parts.
 
 - [Lightning Web Components Dev Guide](https://developer.salesforce.com/docs/component-library/documentation/en/lwc)
 - [LWC | Dev Guide](https://lwc.dev/guide/introduction)
+- [Trailhead LWC Sample Apps](https://github.com/trailheadapps)
 - [JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [Extend Salesforce with Clicks, Not Code](https://help.salesforce.com/s/articleView?id=sf.extend_click_intro.htm&type=5)
 - [SFDCFacts Academy | Lightning Web Component Crash Course | Learn LWC in 100 Minutes with Live Project](https://www.youtube.com/watch?v=bLyAsIeDZtw)
