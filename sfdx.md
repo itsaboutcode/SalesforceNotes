@@ -120,6 +120,24 @@ $ sfdx force:lightning:component:create -n mycomponent --type lwc
 sfdx force:source:push
 ```
 
+### Running Apex Anonymous Code
+
+```js
+sfdx force:apex:execute -f .\scripts\apex\hello.apex
+```
+
+In VSCode, you need to open the file and while on that file, select `Execute Anonymous Apex with Editor Content` option.
+
+![vs-code-annonymous-code](https://user-images.githubusercontent.com/204423/163756136-21dffb8d-297f-4c50-929a-e874c560a1a3.png)
+
+### Debugging Apex Code
+
+#### Get Apex Debug Log
+
+#### Launch Apex Relay Debugger
+
+
+
 # Reference
 
 - [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli)
