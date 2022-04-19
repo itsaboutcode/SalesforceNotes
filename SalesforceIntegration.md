@@ -87,7 +87,7 @@ if(response.getStatusCode() == 200) {
 
 <img width="1420" alt="Add URL FORM" src="https://user-images.githubusercontent.com/204423/160992447-fe32835d-a434-43b4-bce3-7088f21ea29f.png">
 
-### Example SOAP Callout
+### Example SOAP Callout Using WSDL
 
 #### WSDL
 
@@ -127,6 +127,27 @@ You can create Apex classes using `WSDL` file but it's no different than making 
 - For each generated class, a second class is created with the same name and the prefix `Async`. The `CalculatorServices` class is for synchronous callouts. The `AsyncCalculatorServices` class is for asynchronous callouts. 
 
 <img width="1165" alt="Final output" src="https://user-images.githubusercontent.com/204423/161051285-db185b94-dfa8-4234-9018-f4c9da9d3c9a.png">
+
+### Example SOAP Callout Using HTTP
+
+```js
+        HttpRequest req = new HttpRequest();
+        req.setMethod('POST');
+        req.setEndpoint('https://th-apex-http-callout.herokuapp.com/animals.asmx');
+        req.setHeader('Content-Type', 'text/xml; charset=UTF-8');
+        req.setHeader('SOAPAction', 'SomeAction');
+        req.setHeader('Content-Length', '0');
+        req.setBody('<?xml version="1.0" encoding="utf-8"?>' +
+            + '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">'
+            + '<soap:Body xmlns="">'
+            + '</soap:Body></soap:Envelope>');
+
+            System.debug('Request =' + req.getBody().unescapeXml());
+
+            Http http = new Http();
+            HttpResponse res = http.send(req);
+
+```
 
 ## Terminologies 
 
