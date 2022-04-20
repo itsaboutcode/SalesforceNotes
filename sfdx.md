@@ -115,10 +115,13 @@ sfdx config:set defaultusername=me@my.org defaultdevhubusername=me@myhub.org
 sfdx config:set defaultdevhubusername=me@myhub.org
 ```
 
-##### VSCode Method
+##### VSCode Steps
+
+001
 
 ![default-org-1](https://user-images.githubusercontent.com/204423/164186916-8c26935e-e363-4587-8d80-ceb3462ace26.png)
 
+002
 
 ![default-org-2](https://user-images.githubusercontent.com/204423/164187019-5ad071cd-9b5b-4e29-ae60-ba9d8d8cc49f.png)
 
@@ -158,6 +161,20 @@ sfdx force:source:push --targetusername my-other-scratch-org
 ```
 $ sfdx force:lightning:component:create -n mycomponent --type lwc
 ```
+
+##### VSCode Steps
+
+001
+
+![vscode-create-lwc-1](https://user-images.githubusercontent.com/204423/164190897-b735ecaf-6624-42f3-8507-7b1b39ccd99a.png)
+
+002
+
+![vscode-create-lwc-2](https://user-images.githubusercontent.com/204423/164190974-fe8494a1-4622-4b44-897c-b24d69bcebe8.png)
+
+003
+
+![vscode-create-lwc-3](https://user-images.githubusercontent.com/204423/164191001-af4fb841-70a1-4a9a-8305-b004b5d5cf37.png)
 
 #### Project Vs Bundle?
 
