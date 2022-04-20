@@ -107,6 +107,22 @@ sfdx force:org:open -u FullSandbox
 sfdx force:org:open -u MyScratchOrg
 ```
 
+#### Changing the default org for a Salesforce Project
+
+```js
+sfdx force:config:set defaultusername=orgalias
+sfdx config:set defaultusername=me@my.org defaultdevhubusername=me@myhub.org
+sfdx config:set defaultdevhubusername=me@myhub.org
+```
+
+##### VSCode Method
+
+![default-org-1](https://user-images.githubusercontent.com/204423/164186916-8c26935e-e363-4587-8d80-ceb3462ace26.png)
+
+
+![default-org-2](https://user-images.githubusercontent.com/204423/164187019-5ad071cd-9b5b-4e29-ae60-ba9d8d8cc49f.png)
+
+
 #### [Creating SFDX Project](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_project.htm)
 
 This command creates a Salesforce DX project in the specified directory or the current working directory. The command creates the necessary configuration files and folders.
