@@ -62,11 +62,39 @@ sfdx force:org:list
 ##### Exaple Org listing
 
 ```js
+sfdx force:org:list
 === Orgs
-     ALIAS     USERNAME              ORG ID              CONNECTED STATUS
-───  ────────  ────────────────────  ──────────────────  ────────────────
-(U)  adil1445  adil@adil.com         00D0o0000026uUtEAM  Connected
+    ALIAS         USERNAME              ORG ID      CONNECTED STATUS
+    -----------   --------------------  --------    ----------------
+    DD-ORG        jdoe@dd-204.com       00D...OEA   Connected
+(D) devhuborg     jdoe@mydevhub.com     00D...MAC   Connected
 
+
+    ALIAS      SCRATCH ORG NAME USERNAME                   ORG ID    EXPIRATION DATE
+    ---------- ------------     -------------------------- --------- ----------
+    my-scratch Your Company     test-wvkm5z113@example.com 00D...UAI 2017-06-13
+(U) scratch208 Your Company     test-wvkm5z113@example.com 00D...UAY 2017-06-13
+```
+
+- The top section of the output lists the `non-scratch orgs` that you’ve authorized, including Dev Hub orgs, production orgs, and sandboxes. 
+- A `(D)` on the left points to the `default Dev Hub org` username.
+
+- The lower section lists the active scratch orgs that you’ve created.
+- A (U) on the left points to the `default scratch org` username.
+
+#### Listing Org Aliases
+
+```js
+sfdx alias:list
+```
+
+##### Example Output
+
+```js
+ Alias       Value
+ ─────────── ─────────────────────────────────────────
+ adil1535    a@hotmail.com
+ jonmortgage j@w.co.uk.dev
 ```
 
 #### Opening an org
@@ -96,6 +124,11 @@ sfdx force:project:create -n geolocation
 $ sfdx force:source:deploy -p path/to/source
 $ sfdx force:source:deploy -p .\force-app\
 $ sfdx force:source:deploy --sourcepath .\force-app\
+```
+
+#### [Deploy Changes to Scratch Org]()
+```js
+sfdx force:source:push --targetusername my-other-scratch-org
 ```
 
 #### [Create Lightening App]()
