@@ -16,4 +16,6 @@
 - [SFDCFacts Academy](https://www.youtube.com/channel/UCMjPIPV4-WfywFcCkXnHr6w)
 - [Salesforce Hulk](https://www.youtube.com/c/SalesforceHulk)
 - [Path to Code](https://www.youtube.com/c/PathtoCode)
+- [Salesforce Docs](https://developer.salesforce.com/docs)
+- [Trailhead](https://trailhead.salesforce.com/)
 
