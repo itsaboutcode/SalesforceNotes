@@ -30,6 +30,42 @@ A component that renders UI has 2 parts.
 
 #### Import a Component Dynamically
 
+### [Calling Apex Methods From LWC](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.apex)
+
+#### [Expose Apex Methods to Lightning Web Components](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.apex_expose_method)
+
+1. Define a `static` method in the Apex class and annotate it with `@AuraEnabled(cacheable=true)`
+
+```js
+public with sharing class ExampleController {
+
+     @AuraEnabled(cacheable=true)
+    public static void exampleMethod(string recordId) {
+    
+    }
+}
+```
+
+2.Import the static method defined in Apex Class and use it.
+
+```js
+import { LightningElement, api } from 'lwc';
+import exampleMethod from '@salesforce/apex/ExampleController.exampleMethod';  // Importing Apex Method
+
+export default class ExampleComponent extends LightningElement {
+
+    @api recordId;
+
+    // Calling Apex Method and passing the param
+    connectedCallback() {
+      exampleMethod({recordId: this.recordId})
+      .then(result => {})
+      .error(error => {})
+    }
+}
+
+```
+
 
 # Reference
 
