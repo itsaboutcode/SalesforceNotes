@@ -1,5 +1,8 @@
 # Apex Programming Language
 
+- Apex is a `strongly typed`, object-oriented programming language.
+- It allows developers to execute `flow and transaction control statement`s on the Salesforce Platform server.
+
 
 
 ### [Testing Apex](https://developer.salesforce.com/docs/atlas.en-us.234.0.apexcode.meta/apexcode/apex_testing.htm)
