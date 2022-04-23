@@ -19,7 +19,7 @@
 
 - Apex is a `strongly typed`, object-oriented programming language.
 - It allows developers to execute `flow and transaction control statements` on the Salesforce Platform server.
-- Apex code can only be written in a sandbox environment or a Developer org, not in production. 
+- Apex code can only be written in a `sandbox environment or a Developer org`, not in production. 
 - Apex code can be deployed to a production org from a sandbox.
 
 ## [Writing Apex](https://developer.salesforce.com/docs/atlas.en-us.234.0.apexcode.meta/apexcode/apex_writing.htm)
@@ -43,7 +43,7 @@
 ## [Testing Apex](https://developer.salesforce.com/docs/atlas.en-us.234.0.apexcode.meta/apexcode/apex_testing.htm)
 
 - You can write and execute test cases for your classes and triggers with Apex testing framework on lightning platform.
-- Apex unit tests are requirements for deploying and distributing Apex.
+- Apex unit tests and code coverage of minimum 75% are requirements for deploying and distributing Apex.
 
 > Before each major service upgrade, Salesforce runs all Apex tests on your behalf through a process called `Apex Hammer`. The Hammer process runs in the current version and next release and compares the test results. This process ensures that the behavior in your custom code hasn’t been altered as a result of service upgrades. The Hammer process picks orgs selectively and doesn’t run in all orgs. Issues found are triaged based on certain criteria. Salesforce strives to fix all issues found before each new release.
 
@@ -56,6 +56,12 @@ This metric shows the number of `code lines` executed during test case execution
 ```js
 average = (number of lines executed by test cases)/(total numer of line) * 100%
 ```
+
+- Blue lines covered by test cases
+- Red lines are **not** covered by test cases.
+
+![test-coverage1](https://user-images.githubusercontent.com/204423/164885878-63860c45-73f6-40a0-81a3-793f2422f10b.png)
+
 
 #### Deployment Requirement
 
@@ -87,7 +93,7 @@ Before you can deploy your code or package it for the Salesforce AppExchange, th
 If you want to test private/protected `members (methods, variables, classes)`, you have 2 options
 
 1. Make a public method which uses private members.
-2. Annotate private/protected members of a class with `@TestVisible`
+2. Annotate private/protected members of a class with `@TestVisible` so that you can access them from your test class and use those members.
 
 
 
@@ -97,7 +103,7 @@ If you want to test private/protected `members (methods, variables, classes)`, y
 - If you’re using a test class for unit testing only, declare it as private. 
 - Public test classes are typically used for test data factory classes.
 
-- Test `methods` must be defined in test classes, which are classes annotated with isTest.
+- Test `methods` must be defined in test classes, which are classes annotated with `isTest`.
 - The `visibility` of a test method doesn’t matter, so declaring a test method as public or private doesn’t make a difference as the testing framework is always able to access test methods. 
 - For this reason, the access modifiers are omitted in the syntax.
 
