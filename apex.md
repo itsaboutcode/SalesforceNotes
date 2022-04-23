@@ -132,10 +132,15 @@ private class MyTestClass {
 6. Click **Run**.
 7. In the `Tests tab`, you see the status of your tests as they’re running. Expand the test run, and expand again until you see the list of individual tests that were run. They all have green checkmarks. 
 
+![test-result](https://user-images.githubusercontent.com/204423/164886232-053e798b-30cd-45e9-a68b-f4562369077b.png)
 
 After you run tests, code coverage is automatically generated for the Apex classes and triggers in the org. You can check the code coverage percentage in the Tests tab of the Developer Console.
 
+![test-coverage](https://user-images.githubusercontent.com/204423/164886240-a2dcce08-3cab-485d-bfb6-4f4dd7e22be0.png)
+
+
 While one test method would have resulted in full coverage of the class in question, it’s still important to test for different inputs to ensure the quality of your code.
+
 
 
 
