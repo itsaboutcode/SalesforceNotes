@@ -12,6 +12,10 @@
     - [Example Test Syntax](#example-test-syntax)
     - [Steps to Apex Testing From Developer Console](#steps-to-apex-testing-from-developer-console)
     - [Apex Testing in VS Code](#apex-testing-in-vs-code)
+    - [Create and Execute a Test Suite](#create-and-execute-a-test-suite)
+    - [Testing Apex Triggers](#testing-apex-triggers)
+    - [Create Test Data for Apex Tests](#create-test-data-for-apex-tests)
+    - [Reference: Trailhead | Apex Testing](#reference-trailhead--apex-testing)
 - [Reference](#reference)
 
 
@@ -141,13 +145,24 @@ After you run tests, code coverage is automatically generated for the Apex class
 
 While one test method would have resulted in full coverage of the class in question, it’s still important to test for different inputs to ensure the quality of your code.
 
-
-
-
-
 ### [Apex Testing in VS Code](https://developer.salesforce.com/tools/vscode/en/apex/testing)
 
-[Trailhead | Apex Testing](https://trailhead.salesforce.com/content/learn/modules/apex_testing)
+### Create and Execute a Test Suite
+
+### [Testing Apex Triggers](https://trailhead.salesforce.com/en/content/learn/modules/apex_testing/apex_testing_triggers)
+
+- Triggers are tested by firing the trigger and verify expected results.
+- To isolate the data setup process’s limit usage, enclose the test call within the [Test.startTest() and Test.stopTest() block](https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/apex_testing_tools_start_stop_test.htm)
+
+
+### [Create Test Data for Apex Tests](https://trailhead.salesforce.com/content/learn/modules/apex_testing/apex_testing_data)
+
+- The `TestDataFactory` class is a special type of class—it is a public class that is annotated with isTest and can be accessed only from a running test.
+- Test utility classes contain methods that can be called by test methods to perform useful tasks, such as setting up test data. 
+- Test utility classes are excluded from the org’s code size limit.
+
+
+### Reference: [Trailhead | Apex Testing](https://trailhead.salesforce.com/content/learn/modules/apex_testing)
 
 
 
