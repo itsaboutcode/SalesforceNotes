@@ -15,7 +15,13 @@
     - [Create and Execute a Test Suite](#create-and-execute-a-test-suite)
     - [Testing Apex Triggers](#testing-apex-triggers)
     - [Create Test Data for Apex Tests](#create-test-data-for-apex-tests)
-    - [Reference: Trailhead | Apex Testing](#reference-trailhead--apex-testing)
+    - [Testing Call Outs (REST/HTTP and SOAP)](#testing-call-outs-resthttp-and-soap)
+      - [SOAP Call Outs Testing](#soap-call-outs-testing)
+        - [Steps to Test SOAP Call Outs](#steps-to-test-soap-call-outs)
+          - [Step # 01](#step--01)
+          - [Step # 02](#step--02)
+          - [Step # 03](#step--03)
+      - [REST Call Outs Testing](#rest-call-outs-testing)
 - [Reference](#reference)
 
 
@@ -161,8 +167,89 @@ While one test method would have resulted in full coverage of the class in quest
 - Test utility classes contain methods that can be called by test methods to perform useful tasks, such as setting up test data. 
 - Test utility classes are excluded from the org’s code size limit.
 
+### Testing Call Outs (REST/HTTP and SOAP)
 
-### Reference: [Trailhead | Apex Testing](https://trailhead.salesforce.com/content/learn/modules/apex_testing)
+- By default, test methods don’t support SOAP and REST callouts, and tests that perform web service callouts fail.
+
+#### SOAP Call Outs Testing
+
+- For `SOAP`, Apex provides the built-in `WebServiceMock` interface and the `Test.setMock` method. 
+- Use `WebServiceMock` and `Test.setMock` to `receive fake responses` in a test method.
+
+- WSDL2Apex auto-generated class call `WebServiceCallout.invoke`, which performs the callout to the external service.
+- When testing these methods, you can instruct the Apex runtime to `generate a fake response` whenever `WebServiceCallout.invoke` is called.
+- To do so, implement the `WebServiceMock interface` and specify a `fake response` for the Apex runtime to send.
+
+##### [Steps to Test SOAP Call Outs](https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/apex_callouts_wsdl2apex_testing.htm)
+
+###### Step # 01
+
+- First, implement the WebServiceMock interface and specify the fake response in the `doInvoke` method.
+- The class implementing the WebServiceMock interface can be either `global or public.`
+- You can annotate this class with @isTest because it is used only in a test context. In this way, you can exclude it from your org’s code size limit of 6 MB.
+
+```js
+@isTest
+global class CalculatorCalloutMock implements WebServiceMock {
+   global void doInvoke(
+           Object stub,
+           Object request,
+           Map<String, Object> response,
+           String endpoint,
+           String soapAction,
+           String requestName,
+           String responseNS,
+           String responseName,
+           String responseType) {
+        // start - specify the response you want to send
+        calculatorServices.doAddResponse response_x = 
+            new calculatorServices.doAddResponse();
+        response_x.return_x = 3.0;
+        // end
+        response.put('response_x', response_x); 
+   }
+}
+```
+
+###### Step # 02
+
+- Call the service.
+
+```js
+public class AwesomeCalculator {
+    public static Double add(Double x, Double y) {
+        calculatorServices.CalculatorImplPort calculator = 
+            new calculatorServices.CalculatorImplPort();
+        return calculator.doAdd(x,y);
+    }
+}
+```
+
+###### Step # 03
+
+- Now that you have specified the values of the fake response, instruct the Apex runtime to send this fake response by calling `Test.setMock` in your test method. 
+- For the first argument, pass `WebServiceMock.class`, and for the second argument, pass a new instance of your interface implementation of `WebServiceMock`.
+- After this point, if a web service callout is invoked in test context, the callout is not made. You receive the mock response specified in your doInvoke method implementation.
+
+
+```js
+@isTest
+private class AwesomeCalculatorTest {
+    @isTest static void testCallout() {              
+        // This causes a fake response to be generated
+        Test.setMock(WebServiceMock.class, new CalculatorCalloutMock());
+        // Call the method that invokes a callout
+        Double x = 1.0;
+        Double y = 2.0;
+        Double result = AwesomeCalculator.add(x, y);
+        // Verify that a fake result is returned
+        System.assertEquals(3.0, result); 
+    }
+}
+```
+
+#### REST Call Outs Testing
+- For `REST`, Apex provides the built-in `HttpCalloutMock` interface to specify the response sent in the respond method, which the Apex runtime calls to send a response for a callout.
 
 
 
@@ -176,3 +263,5 @@ While one test method would have resulted in full coverage of the class in quest
 - [Trailhead Specialist | Data Integration Specialist](https://trailhead.salesforce.com/content/learn/superbadges/superbadge_integration)
 - [Trailhead Specialist | Advanced Apex Specialist](https://trailhead.salesforce.com/content/learn/superbadges/superbadge_aap)
 - [Trailhead Trail | Build Apex Coding Skills](https://trailhead.salesforce.com/en/content/learn/trails/build-apex-coding-skills)
+- [Trailhead | Apex Testing](https://trailhead.salesforce.com/content/learn/modules/apex_testing)
+- [Testing HTTP Callouts](https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/apex_classes_restful_http_testing_httpcalloutmock.htm)

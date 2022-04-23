@@ -1,3 +1,21 @@
+- [Salesforce Integration Guide/Notes](#salesforce-integration-guidenotes)
+  - [Web Services](#web-services)
+    - [REST](#rest)
+    - [SOAP](#soap)
+    - [REST Web Service Methods](#rest-web-service-methods)
+  - [Making Request](#making-request)
+    - [Example REST Callout](#example-rest-callout)
+    - [Making Request Using Developer Console](#making-request-using-developer-console)
+    - [Authorize Endpoint](#authorize-endpoint)
+    - [Example SOAP Callout Using WSDL](#example-soap-callout-using-wsdl)
+      - [WSDL](#wsdl)
+      - [SOAP](#soap-1)
+      - [Real life analogy to WSDL and SOAP.](#real-life-analogy-to-wsdl-and-soap)
+    - [Generating Proxy files using WSDL document](#generating-proxy-files-using-wsdl-document)
+    - [Example SOAP Callout Using HTTP](#example-soap-callout-using-http)
+  - [Terminologies](#terminologies)
+- [Reference](#reference)
+
 # Salesforce Integration Guide/Notes
 
 - It's needed when we need to connect 2 or more different systems e.g; if you wanted to show your dropbox files in your salesforce org page.
@@ -164,3 +182,4 @@ You can create Apex classes using `WSDL` file but it's no different than making 
 - [Trailhead | Data Integration Specialist](https://trailhead.salesforce.com/content/learn/superbadges/superbadge_integration)
 - [APEX + Integration](https://developer.salesforce.com/docs/atlas.en-us.234.0.apexcode.meta/apexcode/apex_running.htm)
 - [SFDCFacts Academy | Salesforce Integration Crash Course | The Ultimate Guide to Salesforce Integrations | In 100 Minutes](https://www.youtube.com/watch?v=2myol9hI28c&t=1269s)
+- [Integration and Apex Utilities](https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/apex_integration_intro.htm)
