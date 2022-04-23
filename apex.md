@@ -10,7 +10,7 @@
     - [What to Test in Apex](#what-to-test-in-apex)
     - [Accessing Private Test Class Members](#accessing-private-test-class-members)
     - [Example Test Syntax](#example-test-syntax)
-    - [Apex Testing From Developer Console](#apex-testing-from-developer-console)
+    - [Steps to Apex Testing From Developer Console](#steps-to-apex-testing-from-developer-console)
     - [Apex Testing in VS Code](#apex-testing-in-vs-code)
 - [Reference](#reference)
 
@@ -116,7 +116,22 @@ private class MyTestClass {
 - There is another version of this method that takes a third parameter—a string that describes the comparison being done.
 -  This optional string is logged if the assertion fails.
 
-### Apex Testing From Developer Console
+### Steps to Apex Testing From Developer Console
+
+1. In the Developer Console, click `File -> New -> Apex Class`, and enter the class name e.g; `TestTemperatureConverter` for the class name, and then click OK.
+2. Annotate class and it's methods with `@isTest`
+3. In the Developer Console, click `Test -> New Run`
+4. Under Test Classes, select your class, e.g; `TestTemperatureConverter`.
+5. To add all the test methods in the `TestTemperatureConverter` class to the test run, click **Add Selected**.
+6. Click **Run**.
+7. In the `Tests tab`, you see the status of your tests as they’re running. Expand the test run, and expand again until you see the list of individual tests that were run. They all have green checkmarks. 
+
+
+After you run tests, code coverage is automatically generated for the Apex classes and triggers in the org. You can check the code coverage percentage in the Tests tab of the Developer Console.
+
+While one test method would have resulted in full coverage of the class in question, it’s still important to test for different inputs to ensure the quality of your code.
+
+
 
 
 ### [Apex Testing in VS Code](https://developer.salesforce.com/tools/vscode/en/apex/testing)
