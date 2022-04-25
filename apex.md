@@ -22,6 +22,9 @@
           - [Step # 02](#step--02)
           - [Step # 03](#step--03)
       - [REST Call Outs Testing](#rest-call-outs-testing)
+        - [Step # 01](#step--01-1)
+        - [Step # 02](#step--02-1)
+      - [Multiple Call outs in One Test](#multiple-call-outs-in-one-test)
 - [Reference](#reference)
 
 
@@ -106,16 +109,15 @@ If you want to test private/protected `members (methods, variables, classes)`, y
 2. Annotate private/protected members of a class with `@TestVisible` so that you can access them from your test class and use those members.
 
 
-
 ### Example Test Syntax
 
 - Test `classes` can be either private or public. 
-- If you’re using a test class for unit testing only, declare it as private. 
+- If you’re using a test class for unit testing only, declare it as `private`. 
 - Public test classes are typically used for test data factory classes.
-
 - Test `methods` must be defined in test classes, which are classes annotated with `isTest`.
 - The `visibility` of a test method doesn’t matter, so declaring a test method as public or private doesn’t make a difference as the testing framework is always able to access test methods. 
 - For this reason, the access modifiers are omitted in the syntax.
+- Declare method as `static`.
 
 ```js
 @isTest
@@ -184,7 +186,7 @@ While one test method would have resulted in full coverage of the class in quest
 
 ###### Step # 01
 
-- First, implement the WebServiceMock interface and specify the fake response in the `doInvoke` method.
+- First, implement the` WebServiceMock` interface and specify the fake response in the `doInvoke` method.
 - The class implementing the WebServiceMock interface can be either `global or public.`
 - You can annotate this class with @isTest because it is used only in a test context. In this way, you can exclude it from your org’s code size limit of 6 MB.
 
@@ -251,7 +253,87 @@ private class AwesomeCalculatorTest {
 #### REST Call Outs Testing
 - For `REST`, Apex provides the built-in `HttpCalloutMock` interface to specify the response sent in the respond method, which the Apex runtime calls to send a response for a callout.
 
+##### Step # 01
+- First, implement the `HttpCalloutMock` interface and specify the fake response in the `response` method.
+- The class implementing the `HttpCalloutMock` interface can be either `global or public.`
+- You can annotate this class with @isTest because it is used only in a test context. In this way, you can exclude it from your org’s code size limit of 6 MB.
 
+```js
+@isTest
+global class AnimalsHttpCalloutMock implements HttpCalloutMock {
+    // Implement this interface method
+    global HTTPResponse respond(HTTPRequest request) {
+        // Create a fake response
+        HttpResponse response = new HttpResponse();
+        response.setHeader('Content-Type', 'application/json');
+        response.setBody('{"animals": ["majestic badger", "fluffy bunny", "scary bear", "chicken", "mighty moose"]}');
+        response.setStatusCode(200);
+        return response; 
+    }
+}
+```
+
+##### Step # 02
+
+- Call the method which have REST callout and provide the mock response before executing the method
+
+```js
+@isTest 
+static void testPostCallout() {
+    // Set mock callout class 
+    Test.setMock(HttpCalloutMock.class, new AnimalsHttpCalloutMock()); 
+    // This causes a fake response to be sent
+    // from the class that implements HttpCalloutMock. 
+    HttpResponse response = AnimalsCallouts.makePostCallout();
+    // Verify that the response received contains fake values
+    String contentType = response.getHeader('Content-Type');
+    System.assert(contentType == 'application/json');
+    String actualValue = response.getBody();
+    System.debug(response.getBody());
+    String expectedValue = '{"animals": ["majestic badger", "fluffy bunny", "scary bear", "chicken", "mighty moose"]}';
+    System.assertEquals(expectedValue, actualValue);
+    System.assertEquals(200, response.getStatusCode());
+}
+```
+
+#### [Multiple Call outs in One Test](https://salesforce.stackexchange.com/questions/139235/how-to-create-mock-class-for-multiple-callouts-in-single-class)
+
+- It's possible that you have to make multiple callouts in one test method. To provide mock response, following code will do the trick.
+- And even if you don't have multiple requests in one test method, below code is good approach to provide response in one file for multiple use cases.
+
+```js
+private class Mock implements HttpCalloutMock {
+        public HTTPResponse respond(HTTPRequest req) {
+            if (req.getEndpoint().endsWith('abc')) {
+                HTTPResponse res = new HTTPResponse();
+                res.setBody('{}');
+                res.setStatusCode(200);
+                return res;
+            } else if (req.getEndpoint().endsWith('xyz')) {
+                ...
+            } else {
+                System.assert(false, 'unexpected endpoint ' + req.getEndpoint());
+                return null;
+            }
+        }
+    }
+```
+
+And you can use it like any other mock.
+
+```js
+@IsTest
+    static void abc() {
+        Test.setMock(HttpCalloutMock.class, new Mock());
+        ...
+    }
+
+    @IsTest
+    static void xyz() {
+        Test.setMock(HttpCalloutMock.class, new Mock());
+        ...
+    }
+```
 
 
 # Reference

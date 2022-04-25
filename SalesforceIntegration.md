@@ -3,7 +3,7 @@
     - [REST](#rest)
     - [SOAP](#soap)
     - [REST Web Service Methods](#rest-web-service-methods)
-  - [Making Request](#making-request)
+  - [Making Request To External Service](#making-request-to-external-service)
     - [Example REST Callout](#example-rest-callout)
     - [Making Request Using Developer Console](#making-request-using-developer-console)
     - [Authorize Endpoint](#authorize-endpoint)
@@ -13,6 +13,11 @@
       - [Real life analogy to WSDL and SOAP.](#real-life-analogy-to-wsdl-and-soap)
     - [Generating Proxy files using WSDL document](#generating-proxy-files-using-wsdl-document)
     - [Example SOAP Callout Using HTTP](#example-soap-callout-using-http)
+  - [Expose Your Apex Class as a Web Service](#expose-your-apex-class-as-a-web-service)
+    - [Example Use Case](#example-use-case)
+    - [Steps to Expose a Class as a REST Service](#steps-to-expose-a-class-as-a-rest-service)
+    - [Steps to Expose a Class as a SOAP Service](#steps-to-expose-a-class-as-a-soap-service)
+    - [Test Your Apex REST Class](#test-your-apex-rest-class)
   - [Terminologies](#terminologies)
 - [Reference](#reference)
 
@@ -45,7 +50,7 @@
 - PATCH - Update existing records.
 - Delete - Delete existing records.
 
-## Making Request
+## Making Request To External Service
 
 ### Example REST Callout
 
@@ -167,6 +172,62 @@ You can create Apex classes using `WSDL` file but it's no different than making 
 
 ```
 
+## [Expose Your Apex Class as a Web Service](https://trailhead.salesforce.com/en/content/learn/modules/apex_integration_services/apex_integration_webservices)
+
+- You can expose your Apex class methods as a `REST or SOAP` web service operation.
+- By making your methods callable through the web, external applications can integrate with Salesforce.
+
+### Example Use Case
+- You hav an internal app used to make calls to potential leads.
+- You can show the leads data from Salesforce in your app and also get updates in the lead status, if any.
+
+### [Steps to Expose a Class as a REST Service](https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/apex_rest.htm)
+
+1.  Define your class as `global`.
+2.  Define methods as `global static`.
+3.  Add annotations to the class (@RestResource(urlMapping='/Account/*')) and methods (@HttpGet)
+
+```js
+@RestResource(urlMapping='/Account/*')
+global with sharing class MyRestResource {
+    @HttpGet
+    global static Account getRecord() {
+        // Add your code
+    }
+}
+```
+
+- The base endpoint for Apex REST is https://yourInstance.my.salesforce.com/services/apexrest/.
+- The URL mapping is appended to the base endpoint to form the endpoint for your REST service (https://yourInstance.my.salesforce.com/services/apexrest/Account/*)
+- The URL mapping is case-sensitive and can contain a wildcard character (*).
+
+The following method annotations are available. 
+
+
+
+### [Steps to Expose a Class as a SOAP Service](https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/apex_web_services.htm)
+
+1.  Define your class as `global`.
+2.  Add the `webservice` keyword and the `static` definition modifier to each method you want to expose. 
+3.  The `webservice` keyword provides global access to the method it is added to.
+
+
+```js
+global with sharing class MySOAPWebService {
+    webservice static Account getRecord(String id) {
+        // Add your code
+    }
+}
+```
+
+- The external application can call your custom Apex methods as web service operations by consuming the class WSDL file.
+- You can generate this WSDL for your class from the class detail page, accessed from the Apex Classes page in Setup.
+
+### [Test Your Apex REST Class]()
+
+
+
+
 ## Terminologies 
 
 - **OpenAPI:** An api for which you don't need to authorize yourself to make the call. [Spoonacular](https://spoonacular.com/food-api/docs) is one such example.
@@ -183,3 +244,8 @@ You can create Apex classes using `WSDL` file but it's no different than making 
 - [APEX + Integration](https://developer.salesforce.com/docs/atlas.en-us.234.0.apexcode.meta/apexcode/apex_running.htm)
 - [SFDCFacts Academy | Salesforce Integration Crash Course | The Ultimate Guide to Salesforce Integrations | In 100 Minutes](https://www.youtube.com/watch?v=2myol9hI28c&t=1269s)
 - [Integration and Apex Utilities](https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/apex_integration_intro.htm)
+- [Apex Rest](https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/apex_rest_intro.htm)
+- [REST API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.224.0.api_rest.meta/api_rest/intro_what_is_rest_api.htm)
+- [APIs and Integration](https://developer.salesforce.com/developer-centers/integration-apis)
+- [SFDC Panther+ | Salesforce Integration Tutorials](https://www.youtube.com/watch?v=Jcmw5WqjNwU&list=PLV3ll8m0ZlpqVOJCTFJu8uNJ-f2OppInR)
+- [Salesforce Hulk | Understanding REST APIs and Integrations Basics in Salesforce Development](https://www.youtube.com/watch?v=mmS5V3j1E9U)
