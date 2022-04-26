@@ -203,6 +203,7 @@ global with sharing class MyRestResource {
 
 The following method annotations are available. 
 
+![method-annoations](https://user-images.githubusercontent.com/204423/165228863-29c31cac-e4ab-42df-9ba6-19aac002a07b.png)
 
 
 ### [Steps to Expose a Class as a SOAP Service](https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/apex_web_services.htm)
