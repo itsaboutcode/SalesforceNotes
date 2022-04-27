@@ -1,6 +1,12 @@
 - [Apex Programming Language](#apex-programming-language)
   - [Writing Apex](#writing-apex)
   - [Apex Triggers](#apex-triggers)
+    - [Trigger Syntax](#trigger-syntax)
+    - [Steps to Create Trigger From Developer Console](#steps-to-create-trigger-from-developer-console)
+    - [Steps to Create Trigger From VSCode](#steps-to-create-trigger-from-vscode)
+    - [Types of Triggers](#types-of-triggers)
+    - [Using Context Variables](#using-context-variables)
+    - [Trigger Context Variables](#trigger-context-variables)
   - [Asynchronous Apex](#asynchronous-apex)
   - [Debugging Apex](#debugging-apex)
   - [Testing Apex](#testing-apex)
@@ -31,8 +37,11 @@
 # Apex Programming Language
 
 - Apex is a `strongly typed`, object-oriented programming language.
+
 - It allows developers to execute `flow and transaction control statements` on the Salesforce Platform server.
+
 - Apex code can only be written in a `sandbox environment or a Developer org`, not in production. 
+
 - Apex code can be deployed to a production org from a sandbox.
 
 ## [Writing Apex](https://developer.salesforce.com/docs/atlas.en-us.234.0.apexcode.meta/apexcode/apex_writing.htm)
@@ -40,8 +49,90 @@
 [Trailhead | Build Apex Coding Skills](https://trailhead.salesforce.com/en/content/learn/trails/build-apex-coding-skills)
 
 ## [Apex Triggers](https://developer.salesforce.com/docs/atlas.en-us.234.0.apexcode.meta/apexcode/apex_triggers.htm)
-
 [Trailhead | Apex Triggers](https://trailhead.salesforce.com/en/content/learn/modules/apex_triggers)
+
+- Apex triggers enable you to perform `custom actions before or after events` to records in Salesforce, such as `insertions, updates, or deletions.`
+
+- Just like `database triggers`, Apex provides trigger support for managing records.
+
+- Triggers can be defined for top-level standard objects, such as Account or Contact, custom objects, and some standard child objects. 
+
+- Triggers are active by default when created. Salesforce automatically fires active triggers when the specified database events occur.
+
+- Typically, you use triggers to perform operations based on specific conditions, to modify related records or restrict certain operations from happening. 
+
+### Trigger Syntax
+
+```js
+trigger TriggerName on ObjectName (trigger_events) {
+   code_block
+}
+
+trigger HelloWorldTrigger on Account (before insert) {
+	System.debug('Hello World!');
+}
+```
+
+- A trigger definition starts with the `trigger` keyword.
+
+- It is then followed by the `name` of the trigger, the Salesforce `object` that the trigger is associated with, and the `conditions` under which it fires.
+  
+> To execute a trigger before or after insert, update, delete, and undelete operations, specify multiple **trigger events in a comma-separated list**. The events you can specify are:
+
+
+- before insert
+- before update
+- before delete
+- after insert
+- after update
+- after delete
+- after undelete
+
+### Steps to Create Trigger From Developer Console
+
+- Setup -> Developer Console -> File | New | Apex Trigger.
+- Enter `HelloWorldTrigger` for the trigger name, and then select Account for the sObject. Click **Submit**.
+
+### Steps to Create Trigger From VSCode
+
+### Types of Triggers
+
+- **Before triggers** are used to `update or validate` record values `before they’re saved` to the database.
+
+- **After triggers** are used to `access field values` that are set by the system (such as a record's Id or LastModifiedDate field), and to affect changes in other records. The records that fire the after trigger are `read-only.`
+
+### Using Context Variables
+
+- To access the records that caused the trigger to fire, use `context variables.`
+
+- `Trigger.New` contains all the records that were inserted in insert or update triggers.
+
+- `Trigger.Old` provides the old version of sObjects before they were updated in update triggers, or a list of deleted sObjects in delete triggers.
+
+In below example, it iterates over each account in a for loop and updates the Description field for each.
+
+```js
+trigger HelloWorldTrigger on Account (before insert) {
+    for(Account a : Trigger.New) {
+        a.Description = 'New description';
+    }   
+}
+```
+
+> The system saves the records that fired the `before trigger` after the trigger finishes execution.
+> 
+> You can modify the records in the trigger without explicitly calling a DML insert or update operation. 
+> 
+> If you perform DML statements on those records, you get an error.
+
+Another Example showing more than one events.
+```js
+trigger ContextExampleTrigger on Account (before insert, after insert, after delete) {
+}
+```
+
+### Trigger Context Variables
+
 
 ## [Asynchronous Apex](https://developer.salesforce.com/docs/atlas.en-us.234.0.apexcode.meta/apexcode/apex_async_overview.htm)
 
@@ -56,6 +147,7 @@
 ## [Testing Apex](https://developer.salesforce.com/docs/atlas.en-us.234.0.apexcode.meta/apexcode/apex_testing.htm)
 
 - You can write and execute test cases for your classes and triggers with Apex testing framework on lightning platform.
+  
 - Apex unit tests and code coverage of minimum 75% are requirements for deploying and distributing Apex.
 
 > Before each major service upgrade, Salesforce runs all Apex tests on your behalf through a process called `Apex Hammer`. The Hammer process runs in the current version and next release and compares the test results. This process ensures that the behavior in your custom code hasn’t been altered as a result of service upgrades. The Hammer process picks orgs selectively and doesn’t run in all orgs. Issues found are triaged based on certain criteria. Salesforce strives to fix all issues found before each new release.
@@ -81,7 +173,9 @@ average = (number of lines executed by test cases)/(total numer of line) * 100%
 Before you can deploy your code or package it for the Salesforce AppExchange, the following must be true.
 
 - Unit tests must `cover` at least 75% of your Apex code, and all of those tests must complete successfully.
+  
 - Every trigger must have some test coverage.
+  
 - All classes and triggers must compile successfully.
 
 ### [What to Test in Apex](https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/apex_testing_what.htm)
@@ -229,8 +323,10 @@ public class AwesomeCalculator {
 
 ###### Step # 03
 
-- Now that you have specified the values of the fake response, instruct the Apex runtime to send this fake response by calling `Test.setMock` in your test method. 
+- Now that you have specified the values of the fake response, instruct the Apex runtime to send this fake response by calling `Test.setMock` in your test method.
+  
 - For the first argument, pass `WebServiceMock.class`, and for the second argument, pass a new instance of your interface implementation of `WebServiceMock`.
+  
 - After this point, if a web service callout is invoked in test context, the callout is not made. You receive the mock response specified in your doInvoke method implementation.
 
 
@@ -255,6 +351,7 @@ private class AwesomeCalculatorTest {
 
 ##### Step # 01
 - First, implement the `HttpCalloutMock` interface and specify the fake response in the `response` method.
+  
 - The class implementing the `HttpCalloutMock` interface can be either `global or public.`
 - You can annotate this class with @isTest because it is used only in a test context. In this way, you can exclude it from your org’s code size limit of 6 MB.
 
@@ -299,6 +396,7 @@ static void testPostCallout() {
 #### [Multiple Call outs in One Test](https://salesforce.stackexchange.com/questions/139235/how-to-create-mock-class-for-multiple-callouts-in-single-class)
 
 - It's possible that you have to make multiple callouts in one test method. To provide mock response, following code will do the trick.
+  
 - And even if you don't have multiple requests in one test method, below code is good approach to provide response in one file for multiple use cases.
 
 ```js
@@ -339,6 +437,7 @@ And you can use it like any other mock.
 # Reference
 
 - [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.234.0.apexcode.meta/apexcode)
+  
 - [Enhance Salesforce with Code](https://help.salesforce.com/s/articleView?id=sf.extend_code_overview.htm&type=5)
 - [Apex Reference Guide](https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_ref_guide.htm)
 - [Trailhead Specialist | Apex Spcialist](https://trailhead.salesforce.com/en/content/learn/superbadges/superbadge_apex)
