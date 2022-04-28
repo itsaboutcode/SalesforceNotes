@@ -145,9 +145,15 @@ $ sfdx force:source:deploy -p .\force-app\
 $ sfdx force:source:deploy --sourcepath .\force-app\
 ```
 
-#### [Deploy Changes to Scratch Org]()
+#### [Deploy Changes to Scratch Org](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_push_md_to_scratch_org.htm)
 ```js
 sfdx force:source:push --targetusername my-other-scratch-org
+```
+
+#### [Creating a Scratch Org](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_create.htm)
+
+```js
+sfdx force:org:create -f project-scratch-def.json -a MyScratchOrg --setdefaultusername
 ```
 
 #### [Create Lightening App]()

@@ -1,0 +1,14 @@
+- [Creating Object](#creating-object)
+- [Gloabl Pick List](#gloabl-pick-list)
+- [Reference](#reference)
+
+# Creating Object
+
+- `Record Name` field is always called **"Name"** when referenced via the API
+
+
+# Gloabl Pick List
+
+Setup -> Field Set -> Field Set
+
+# Reference
