@@ -186,6 +186,30 @@ sfdx force:source:push --targetusername my-other-scratch-org
 sfdx force:org:create -f project-scratch-def.json -a MyScratchOrg --setdefaultusername
 ```
 
+#### [Creating a Scratch Org using VSCode]()
+
+##### Step # 01
+
+![scratch-org](https://user-images.githubusercontent.com/204423/165761493-13379ede-676e-42e1-961d-024830ae8db7.png)
+
+
+##### Step # 02
+
+
+![scratch-org1](https://user-images.githubusercontent.com/204423/165761556-ebab30a5-f385-45de-9f5b-4b754f967fa3.png)
+
+
+##### Step # 03
+
+![scratch-org2](https://user-images.githubusercontent.com/204423/165761584-efce3d31-6e3e-4395-a4db-cdc51a85bc12.png)
+
+
+##### Step # 04
+
+
+![scratch-org3](https://user-images.githubusercontent.com/204423/165761613-08039b47-25de-456d-924d-58dcdfa2dea2.png)
+
+
 #### [Create Lightening App]()
 
 #### [Create LWC]()
