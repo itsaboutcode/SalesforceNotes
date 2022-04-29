@@ -14,14 +14,19 @@
       - [Creating SFDX Project](#creating-sfdx-project)
       - [Deploy Changes to Developer Edition Org or a Trailhead Playground](#deploy-changes-to-developer-edition-org-or-a-trailhead-playground)
           - [To deploy the source files in a directory in Developer Edition Org or a Trailhead Playground](#to-deploy-the-source-files-in-a-directory-in-developer-edition-org-or-a-trailhead-playground)
-      - [Deploy Changes to Scratch Org](#deploy-changes-to-scratch-org)
+    - [Scratch Org](#scratch-org)
       - [Creating a Scratch Org](#creating-a-scratch-org)
+      - [Creating a Scratch Org using VSCode](#creating-a-scratch-org-using-vscode)
+        - [Step # 01](#step--01)
+        - [Step # 02](#step--02)
+        - [Step # 03](#step--03)
+        - [Step # 04](#step--04)
+      - [Deploy Changes to Scratch Org](#deploy-changes-to-scratch-org)
+      - [Pull Source from the Scratch Org to Your Project](#pull-source-from-the-scratch-org-to-your-project)
       - [Create Lightening App](#create-lightening-app)
       - [Create LWC](#create-lwc)
         - [VSCode Steps](#vscode-steps-1)
       - [Project Vs Bundle?](#project-vs-bundle)
-    - [Scratch Org](#scratch-org)
-      - [Push code in Scratch Org](#push-code-in-scratch-org)
     - [Running Apex Anonymous Code](#running-apex-anonymous-code)
     - [Debugging Apex Code](#debugging-apex-code)
       - [Get Apex Debug Log](#get-apex-debug-log)
@@ -175,10 +180,7 @@ $ sfdx force:source:deploy -p .\force-app\
 $ sfdx force:source:deploy --sourcepath .\force-app\
 ```
 
-#### [Deploy Changes to Scratch Org](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_push_md_to_scratch_org.htm)
-```js
-sfdx force:source:push --targetusername my-other-scratch-org
-```
+### Scratch Org
 
 #### [Creating a Scratch Org](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_create.htm)
 
@@ -209,6 +211,15 @@ sfdx force:org:create -f project-scratch-def.json -a MyScratchOrg --setdefaultus
 
 ![scratch-org3](https://user-images.githubusercontent.com/204423/165761613-08039b47-25de-456d-924d-58dcdfa2dea2.png)
 
+#### [Deploy Changes to Scratch Org](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_push_md_to_scratch_org.htm)
+```js
+sfdx force:source:push --targetusername my-other-scratch-org
+```
+
+#### [Pull Source from the Scratch Org to Your Project](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_pull_md_from_scratch_org.htm)
+```js
+sfdx force:source:pull
+```
 
 #### [Create Lightening App]()
 
@@ -238,13 +249,6 @@ $ sfdx force:lightning:component:create -n mycomponent --type lwc
 
 #### Project Vs Bundle?
 
-### Scratch Org
-
-#### Push code in Scratch Org
-
-```js
-sfdx force:source:push
-```
 
 ### Running Apex Anonymous Code
 
