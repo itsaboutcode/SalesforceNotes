@@ -30,4 +30,10 @@
 - [Salesforce Docs](https://developer.salesforce.com/docs)
 - [Trailhead](https://trailhead.salesforce.com/)
 - [Metadata API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_intro.htm)
-
+- [edureka! | Salesforce Administrator Training](https://www.youtube.com/playlist?list=PL9ooVrP1hQOG5swCbkaIYwF8QJyKRkIiR)
+- [Terry's Tidbits | Salesforce Admin Study Group (2022)](https://www.youtube.com/playlist?list=PLPXY38WvYAn7mctOLVSt3LoEpad3DjYnt)
+- [Salesforce Developers](https://www.youtube.com/c/SalesforceDevelopers/featured)
+- [Salesforce Training](https://www.youtube.com/channel/UCa9FBCj_ZcKU6OBtLsQJXpg/playlists)
+- [Simplilearn](https://www.youtube.com/playlist?list=PLEiEAq2VkUUK0x8URvIzHZ3_JYTdHxTAd)
+- [MyTutorialRack](https://www.youtube.com/c/MyTutorialRack/playlists)
+- [Trailblazing Together](https://www.youtube.com/c/TrailblazingTogether/playlists)
