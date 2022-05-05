@@ -1,4 +1,5 @@
 - [My Trailhead Account](#my-trailhead-account)
+- [Salesforce Admin Certification](#salesforce-admin-certification)
 - [Point and Click Developement](#point-and-click-developement)
 - [Salesforce Command Line (SFDX)](#salesforce-command-line-sfdx)
 - [Lightning App Builder](#lightning-app-builder)
@@ -8,6 +9,8 @@
 - [Reference](#reference)
 
 ## [My Trailhead Account](https://trailblazer.me/id/itsaboutcode)
+
+## [Salesforce Admin Certification](admin_cert.md)
 
 ## [Point and Click Developement](point_click.md)
 
