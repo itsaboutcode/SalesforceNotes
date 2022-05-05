@@ -12,7 +12,7 @@
 
 ## [Configuration and Setup: 20%](https://www.youtube.com/playlist?list=PL8O9iwxpgTOI3XSdW0GmASfnok4ovsiQL)
 
-## [Object Manager and Lightning App Builder: 20%](https://www.youtube.com/playlist?list=PL8O9iwxpgTOIX5bsk7Lg5HNIPfunN5hdQ)
+## [Object Manager and Lightning App Builder: 20%](admin_cert_object_manager_and_lightning_app_builder.md)
 
 ## [Sales and Marketing Applications: 12%](https://www.youtube.com/playlist?list=PL8O9iwxpgTOLVSWZgDt_F3COdNb2gM15p)
 
