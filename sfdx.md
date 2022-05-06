@@ -11,6 +11,7 @@
       - [Opening an org](#opening-an-org)
       - [Changing the default org for a Salesforce Project](#changing-the-default-org-for-a-salesforce-project)
         - [VSCode Steps](#vscode-steps)
+      - [Deleting a scratch org](#deleting-a-scratch-org)
       - [Creating SFDX Project](#creating-sfdx-project)
       - [Deploy Changes to Developer Edition Org or a Trailhead Playground](#deploy-changes-to-developer-edition-org-or-a-trailhead-playground)
           - [To deploy the source files in a directory in Developer Edition Org or a Trailhead Playground](#to-deploy-the-source-files-in-a-directory-in-developer-edition-org-or-a-trailhead-playground)
@@ -89,10 +90,11 @@ EXAMPLES
 
 #### Listing all the orgs
 
-List all orgs you’ve created or authenticated to.
+List all orgs you’ve created or authenticated to. This command only show `active` scratch orgs. To view expired scratch orgs, use `--all` flag with it.
 
 ```js
 sfdx force:org:list
+sfdx force:org:list --all // View expired scratch orgs too
 ```
 ##### Exaple Org listing
 
@@ -159,6 +161,33 @@ sfdx config:set defaultdevhubusername=me@myhub.org
 002
 
 ![default-org-2](https://user-images.githubusercontent.com/204423/164187019-5ad071cd-9b5b-4e29-ae60-ba9d8d8cc49f.png)
+
+
+#### Deleting a scratch org
+
+```js
+sfdx force:org:delete -u me@my.org
+sfdx force:org:delete -u MyOrgAlias -p
+
+USAGE
+  $ sfdx force:org:delete [-p] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel
+  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+OPTIONS
+  -p, --noprompt                                                                    no prompt to confirm deletion
+  -u, --targetusername=targetusername                                               username or alias for the target org; overrides default target org 
+
+  -v, --targetdevhubusername=targetdevhubusername                                   username or alias for the dev hub org; overrides default dev hub   
+
+  --apiversion=apiversion                                                           override the api version used for api requests made by this command
+
+  --json                                                                            format output as json
+
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for this command invocation
+
+DESCRIPTION
+  To mark the org for deletion without being prompted to confirm, specify --noprompt.
+```
 
 
 #### [Creating SFDX Project](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_project.htm)
