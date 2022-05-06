@@ -1,7 +1,7 @@
 - [Object Manager and Lightning App Builder: 20%](#object-manager-and-lightning-app-builder-20)
   - [Standard Objects](#standard-objects)
   - [Master-Detail Relationship](#master-detail-relationship)
-  - [Roll Up Summaries](#roll-up-summaries)
+  - [Roll-Up Summary Fields](#roll-up-summary-fields)
   - [Lookup](#lookup)
   - [Junction Relationship](#junction-relationship)
   - [Customization Relationship](#customization-relationship)
@@ -60,7 +60,12 @@ Common Standard Object includes
   
 - Master relationship field is required on all detailed page layouts (Permanent lookup field).- A custom object can have up to 2 master-detail relationships.
 
-## Roll Up Summaries
+## Roll-Up Summary Fields
+- These `fields` are only allowed on master records in a master-detailed relationship. Example fields includes
+  
+1. Count: count the number of related detail records for any given master record.
+
+2. Sum: Accumulates different fields in the detailed records to be displayed on master record page.
 
 ## Lookup
 
