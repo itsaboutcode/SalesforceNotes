@@ -84,9 +84,12 @@ Features of Lookup Relationship include
 ## Junction Relationship Object
 
 - This object is created to be used in a many-to-many relationship.
+  
 - This object will have `2 master-detail` relationships.
 
 ## Customization Relationship
+
+
 
 ## Accounts and Contacts Relationship
 
@@ -94,9 +97,38 @@ Features of Lookup Relationship include
 
 ## Required Fields
 
+- If a field is a universally required field, it's automatically added to all page layouts.
+  
+- Required field can't be hidden.
+  
+- You can make text, number, and picklist fields as required.
+  
+- They are immune to field security => even if the user doesn't have the right access to see this field, that user will be able to see it.
+
 ## Picklists
 
+- Standard picklist values can be added, updated, and deleted.
+
+- Global `Value Sets` are set of picklist values to be set once and reused by custom picklist fields.
+
+- `Master picklist` is a complete list of picklist values taht can be used in a `Record Type`.
+
 ## Validation Rules
+
+They make sure that the data user has entered meets the specific rules you have set out before data is saved.
+
+System validation rules check the following things.
+
+1. Layout Rules compliance.
+2. Required Fields.
+3. Valid Field Formats.
+4. Field Length (max/min)
+
+Custom validation rules are set up by the user manually. You should be aware of following key validation terms.
+
+1. PRIORVALUE
+2. ISCHANGED
+
 
 ## Cross Object Formula
 
@@ -126,6 +158,10 @@ Features of Lookup Relationship include
 
 ## Assignment Rules
 
+- Automatically assigning records to a certain owner.
+  
+- You can have mutltiple assignment rules and they are executed in order.
+
 ## Business Processes
 
 ## Queues
@@ -142,4 +178,5 @@ Features of Lookup Relationship include
 - [Salesforce Hulk | Salesforce Administrator and App Builder](https://www.youtube.com/playlist?list=PLWgzSrReOBh4P7kQyCJVH7mdmCWw0HXfi)
 - [Tutorials Point | Salesforce](https://www.youtube.com/watch?v=BA-407HF_fM&list=PLWPirh4EWFpH2LYVIrfmA1RTredCySwP_)
 - [Salesforce | Who see what](https://www.youtube.com/playlist?list=PLnobS_RgN7JZxK1wjUvQ84jMFqRZoJXbD)
+- [Salesforce Support](https://www.youtube.com/playlist?list=PLFNbZmUNjID5fHUN1xxvtEIkrRT3YccEo)
 
