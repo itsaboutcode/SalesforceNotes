@@ -7,6 +7,7 @@
 - [LWC](#lwc)
 - [Salesforce Integration](#salesforce-integration)
 - [Reference](#reference)
+- [Remote Jobs](#remote-jobs)
 
 ## [My Trailhead Account](https://trailblazer.me/id/itsaboutcode)
 
@@ -39,3 +40,12 @@
 - [Simplilearn](https://www.youtube.com/playlist?list=PLEiEAq2VkUUK0x8URvIzHZ3_JYTdHxTAd)
 - [MyTutorialRack](https://www.youtube.com/c/MyTutorialRack/playlists)
 - [Trailblazing Together](https://www.youtube.com/c/TrailblazingTogether/playlists)
+- [Salesforce Techbook](https://www.youtube.com/channel/UCipDch4PvPqm0uY4SK7mi1A/playlists)
+- [21 Knots Salesforce Solutions](https://www.youtube.com/c/21Knots)
+- [TutorialsPoints | Salesforce](https://www.tutorialspoint.com/salesforce/)
+
+
+## Remote Jobs
+
+- https://vanhack.com/
+- https://www.findajobingermany.de/

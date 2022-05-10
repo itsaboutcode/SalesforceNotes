@@ -10,7 +10,7 @@
   - [Required Fields](#required-fields)
   - [Picklists](#picklists)
   - [Validation Rules](#validation-rules)
-  - [Cross Object Formula](#cross-object-formula)
+  - [Cross Object Formula Field](#cross-object-formula-field)
   - [Page Layouts and Field Level Security](#page-layouts-and-field-level-security)
   - [List Views and Search Layouts](#list-views-and-search-layouts)
   - [Lightning App Builder](#lightning-app-builder)
@@ -90,7 +90,6 @@ Features of Lookup Relationship include
 ## Customization Relationship
 
 
-
 ## Accounts and Contacts Relationship
 
 ## Changing and Deleting Fields
@@ -130,15 +129,47 @@ Custom validation rules are set up by the user manually. You should be aware of 
 2. ISCHANGED
 
 
-## Cross Object Formula
+## Cross Object Formula Field
+
+- It's a formula field that spans two related objects and references merge fields on those objects up to 10 levels/relationships away.
+
+- Formula fields are not editable on the page layout because data is calculated on the fly. Only the formula is stored in the page layout.
 
 ## Page Layouts and Field Level Security
 
+- We can hide or visibility of a field in a number of ways e.g.; Page layouts and Field level security.
+
+- Field hidden using `field-level security` will `not show up` on 1. Page Layouts 2. Search Results 3. Related Lists 4. List Views 5. Reports.
+
+- Field is hidden using `Page layout` still `available`  on 1. Reports 2. Search Results 3. List Views.
+
+- `Page Layout` can make a `field read-only or required`.
+
+
 ## List Views and Search Layouts
+
+- Users can only fields in the List View they have access to. Field level security absolutely applies to List View.
+
+- User with `Manage Public List Views` permission either via profile or permission set, allows sharing to 1. The users themselves, 2. A group or Roles 3. Everybody
+
+- Users with the above permission can edit other public list views and add more filters to them.
+
+- Users without the above permission set can only make List View for themselves only.
+
+- `Search Layouts` are ordered groups of fields, that show up in search results for a particular record e.g.; 1. Lookup Dialogs 2. Search Results for an entire org 3. Related Lists
+
+- `Search Layouts` also control the recently viewed list views.
 
 ## Lightning App Builder
 
+- You must `activate` a page for a user to view it, even if it has been saved.
+
+- You can assign a page to `Org default`, `App Default`, `App, Record Type, or by Profile`.
+
+
 ## Page Layout Assignments
+
+- You can assign page layouts to different profiles without using record types if you like using page layout assignment.
 
 ## [Record Types](https://www.youtube.com/watch?v=ZsFe0kohDRA)
 
@@ -160,13 +191,27 @@ Custom validation rules are set up by the user manually. You should be aware of 
 
 - Automatically assigning records to a certain owner.
   
-- You can have mutltiple assignment rules and they are executed in order.
+- You can have multiple  assignment rules and they are executed in order.
+
+- An assignment rule is executed when its rule is met. When one of the assignment rule met, other rules will not executed, just like if-else statement.
 
 ## Business Processes
 
+- It's just a path you see on top of the object detail page e.g.; Opportunity (Sales Process), Cases (Support), Solution, and Lead.
+  
+- It helps visually user to see the steps that the user should take to move to the next step.
+
+- Paths can be created on most Standard Objects, and are controlled by picklist values.
+  
 ## Queues
 
+- They are used to collect, prioritize, and share the workload among number of users.
 
+- We can prioritize the workload based certain `filter` or a condition without assigning it to a certain individual.
+
+- A Listview is automatically created when a queue is created for any object (Standard or custom)
+
+- Only members of a queue can accept records from that queue and take ownership.
 
 # References
 

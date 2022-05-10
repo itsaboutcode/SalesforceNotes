@@ -38,5 +38,7 @@
 - [SFDCFacts Academy](https://www.youtube.com/channel/UCMjPIPV4-WfywFcCkXnHr6w)
 - [Salesforce Hulk](https://www.youtube.com/c/SalesforceHulk)
 - [Path to Code](https://www.youtube.com/c/PathtoCode)
+- [Salesforce Techbook | Admin Playlist](https://www.youtube.com/playlist?list=PL-JzyFWuCbkLwrGIkB9Dl2KzoNhnYDJMv)
+
 
 - [Travel Approval Project](https://trailhead.salesforce.com/en/content/learn/trails/build-a-travel-approval-app)
