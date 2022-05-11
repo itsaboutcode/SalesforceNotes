@@ -1,6 +1,6 @@
 - [My Trailhead Account](#my-trailhead-account)
 - [Salesforce Admin Certification](#salesforce-admin-certification)
-- [Point and Click Developement](#point-and-click-developement)
+- [Point and Click Development](#point-and-click-development)
 - [Salesforce Command Line (SFDX)](#salesforce-command-line-sfdx)
 - [Lightning App Builder](#lightning-app-builder)
 - [APEX Programming Language](#apex-programming-language)
@@ -13,7 +13,7 @@
 
 ## [Salesforce Admin Certification](admin_cert.md)
 
-## [Point and Click Developement](point_click.md)
+## [Point and Click Development](point_click.md)
 
 ## [Salesforce Command Line (SFDX)](sfdx.md)
 
