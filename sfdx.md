@@ -10,14 +10,14 @@
         - [Example Output](#example-output)
       - [Opening an org](#opening-an-org)
       - [Changing the default org for a Salesforce Project](#changing-the-default-org-for-a-salesforce-project)
-        - [VSCode Steps](#vscode-steps)
+        - [VS Code Steps](#vs-code-steps)
       - [Deleting a scratch org](#deleting-a-scratch-org)
       - [Creating SFDX Project](#creating-sfdx-project)
       - [Deploy Changes to Developer Edition Org or a Trailhead Playground](#deploy-changes-to-developer-edition-org-or-a-trailhead-playground)
           - [To deploy the source files in a directory in Developer Edition Org or a Trailhead Playground](#to-deploy-the-source-files-in-a-directory-in-developer-edition-org-or-a-trailhead-playground)
     - [Scratch Org](#scratch-org)
       - [Creating a Scratch Org](#creating-a-scratch-org)
-      - [Creating a Scratch Org using VSCode](#creating-a-scratch-org-using-vscode)
+      - [Creating a Scratch Org using VS Code](#creating-a-scratch-org-using-vs-code)
         - [Step # 01](#step--01)
         - [Step # 02](#step--02)
         - [Step # 03](#step--03)
@@ -26,7 +26,7 @@
       - [Pull Source from the Scratch Org to Your Project](#pull-source-from-the-scratch-org-to-your-project)
       - [Create Lightening App](#create-lightening-app)
       - [Create LWC](#create-lwc)
-        - [VSCode Steps](#vscode-steps-1)
+        - [VS Code Steps](#vs-code-steps-1)
       - [Project Vs Bundle?](#project-vs-bundle)
     - [Running Apex Anonymous Code](#running-apex-anonymous-code)
     - [Debugging Apex Code](#debugging-apex-code)
@@ -90,7 +90,7 @@ EXAMPLES
 
 #### Listing all the orgs
 
-List all orgs you’ve created or authenticated to. This command only show `active` scratch orgs. To view expired scratch orgs, use `--all` flag with it.
+List all orgs you’ve created or authenticated to. This command only shows `active` scratch orgs. To view expired scratch orgs, use `--all` flag with it.
 
 ```js
 sfdx force:org:list
@@ -152,7 +152,7 @@ sfdx config:set defaultusername=me@my.org defaultdevhubusername=me@myhub.org
 sfdx config:set defaultdevhubusername=me@myhub.org
 ```
 
-##### VSCode Steps
+##### VS Code Steps
 
 001
 
@@ -217,7 +217,7 @@ $ sfdx force:source:deploy --sourcepath .\force-app\
 sfdx force:org:create -f project-scratch-def.json -a MyScratchOrg --setdefaultusername
 ```
 
-#### [Creating a Scratch Org using VSCode]()
+#### [Creating a Scratch Org using VS Code]()
 
 ##### Step # 01
 
@@ -262,7 +262,7 @@ sfdx force:source:pull
 $ sfdx force:lightning:component:create -n mycomponent --type lwc
 ```
 
-##### VSCode Steps
+##### VS Code Steps
 
 001
 
@@ -285,7 +285,7 @@ $ sfdx force:lightning:component:create -n mycomponent --type lwc
 sfdx force:apex:execute -f .\scripts\apex\hello.apex
 ```
 
-In VSCode, you need to open the file and while on that file, select `Execute Anonymous Apex with Editor Content` option.
+In VS Code, you need to open the file, and while on that file, select the `Execute Anonymous Apex with Editor Content` option.
 
 ![vs-code-annonymous-code](https://user-images.githubusercontent.com/204423/163756136-21dffb8d-297f-4c50-929a-e874c560a1a3.png)
 

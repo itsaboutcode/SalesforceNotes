@@ -3,15 +3,15 @@
     - [REST](#rest)
     - [SOAP](#soap)
     - [REST Web Service Methods](#rest-web-service-methods)
-  - [Making Request To External Service](#making-request-to-external-service)
+  - [Making Request to External Service](#making-request-to-external-service)
     - [Example REST Callout](#example-rest-callout)
-    - [Making Request Using Developer Console](#making-request-using-developer-console)
+    - [Making Requests Using Developer Console](#making-requests-using-developer-console)
     - [Authorize Endpoint](#authorize-endpoint)
     - [Example SOAP Callout Using WSDL](#example-soap-callout-using-wsdl)
       - [WSDL](#wsdl)
       - [SOAP](#soap-1)
-      - [Real life analogy to WSDL and SOAP.](#real-life-analogy-to-wsdl-and-soap)
-    - [Generating Proxy files using WSDL document](#generating-proxy-files-using-wsdl-document)
+      - [Real-life analogy to WSDL and SOAP.](#real-life-analogy-to-wsdl-and-soap)
+    - [Generating Proxy files using the WSDL document](#generating-proxy-files-using-the-wsdl-document)
     - [Example SOAP Callout Using HTTP](#example-soap-callout-using-http)
   - [Expose Your Apex Class as a Web Service](#expose-your-apex-class-as-a-web-service)
     - [Example Use Case](#example-use-case)
@@ -23,7 +23,7 @@
 
 # Salesforce Integration Guide/Notes
 
-- It's needed when we need to connect 2 or more different systems e.g; if you wanted to show your dropbox files in your salesforce org page.
+- It's needed when we need to connect 2 or more different systems e.g.; if you wanted to show your dropbox files on your salesforce org page.
 
 
 ![UKHzcELU](https://user-images.githubusercontent.com/204423/160611269-3b723fde-7e73-4cf5-992c-edf00ecc0131.png)
@@ -31,37 +31,49 @@
 ## Web Services
 
 ### REST
+
 - Fast
-- Supports all type of devices.
-- Works with JSON, XML and other formats.
+  
+- Supports all types of devices.
+  
+- Works with JSON, XML, and other formats.
 
 ### SOAP
+
 - Slow (compared to REST).
+
 - Works with XML.
-- More secure in comparision than REST.
-- Mostly used in Enterprise Applications.
-- You get a document called `WSDL`, which have all the information about request and response of any given service. It help you created request and response classes and methods with parser (in most cases). In-case of REST, you don't have any such faciltiy.
+  
+- It's more secure in comparison to REST.
+  
+- It's mostly used in Enterprise Applications.
+  
+- You get a document called `WSDL`, which has all the information about requests and responses of any given service. It helps you create request and response classes and methods with a parser (in most cases). In the case of REST, you don't have any such facility.
 
 ### REST Web Service Methods
 
 - GET - Retrieve the records.
+  
 - POST - Insert the records.
+  
 - PUT - Insert new records or update existing records.
+  
 - PATCH - Update existing records.
+  
 - Delete - Delete existing records.
 
-## Making Request To External Service
+## Making Request to External Service
 
 ### Example REST Callout
 
 ```java
-// Since we are making call over http, we need an instanace of HTTP.
+// Since we are making calls over http, we need an instance of HTTP.
 Http http = new Http();
 
 // We also need an instance of HttpRequest, which we will send over http using HTTP instance.
 HttpRequest request = new HttpRequest();
 
-// Now we ware adding the information related to request e.g; Endpoint we are hitting and type of request it's. In this case it's GET.
+// Now we ware adding the information related to request e.g.; Endpoint we are hitting and type of request it's. In this case it's GET.
 request.setEndpoint('https://th-apex-http-callout.herokuapp.com/animals');
 request.setMethod('GET');
 
@@ -84,9 +96,9 @@ if(response.getStatusCode() == 200) {
 }
 ```
 
-### Making Request Using Developer Console
+### Making Requests Using Developer Console
 
-- You can run the above code in developer console. Go to developer console, and from there, click on `Debug` -> `Open Execute Anonymous Window`
+- You can run the above code in the developer console. Go to the developer console, and from there, click on `Debug` -> `Open Execute Anonymous Window`.
 
 <img width="306" alt="developer-console" src="https://user-images.githubusercontent.com/204423/160990237-294dc233-f336-4bcd-9277-5a75b0c44f80.png">
 
@@ -98,13 +110,13 @@ if(response.getStatusCode() == 200) {
 
 ### Authorize Endpoint
 
-- In Salesforce, before making any request to an external API, we need to authorize it. Otherwise we will get following error.
+- In Salesforce, before making any request to an external API, we need to authorize it. Otherwise, we will get the following error.
 
 `System.CalloutException: Unauthorized endpoint, please check Setup->Security->Remote site settings. endpoint = https://api.spoonacular.com/recipes/random`
 
 <img width="617" alt="Unauthorized Endpoint Error" src="https://user-images.githubusercontent.com/204423/160989008-67946867-72bc-4526-95f3-293f6f6a255e.png">
 
-- Now to make request, you need to add your site in **Remote site settings**. You can go there by visiting `Setup->Security->Remote Site Settings`
+- Now to make a request, you need to add your site in **Remote site settings**. You can go there by visiting `Setup->Security->Remote Site Settings`
 
 <img width="1426" alt="Remote Site Settings" src="https://user-images.githubusercontent.com/204423/160991942-3c73d9ec-f11e-43dd-8d9f-d132a5a3bf89.png">
 
@@ -115,7 +127,9 @@ if(response.getStatusCode() == 200) {
 #### WSDL
 
 - A **WSDL** is an **XML document** that **describes** a web service. 
-- It tells about the functions that you can implement or exposed to the client e.g; getRecipe etc, request parameters, which are optional, which are required etc and also about the response.
+  
+- It talks about the functions that you can implement or expose to the client e.g.; getRecipe etc., request parameters, which are optional, which are required, etc., and also about the response.
+
 - It actually stands for **Web Services Description/Definition Language**.
 
 #### SOAP
@@ -123,17 +137,17 @@ if(response.getStatusCode() == 200) {
 - **SOAP** is an **XML-based protocol** that lets you **exchange info** over a particular protocol (can be HTTP or SMTP, for example) between applications. 
 - It stands for **Simple Object Access Protocol** and uses XML for its messaging format to relay the information.
 
-#### Real life analogy to WSDL and SOAP.
+#### Real-life analogy to WSDL and SOAP.
 
-**WSDL:** When we go to a restaurant we see the **Menu Items**, those are the WSDL's
+**WSDL:** When we go to a restaurant, we see the **Menu Items**, those are the WSDLs.
 
-**Proxy Classes:** Now after seeing the Menu Items we make up our Mind. So, basically we make Proxy classes based on WSDL Document.
+**Proxy Classes:** Now after seeing the Menu Items we make up our minds. So, basically, we make Proxy classes based on WSDL Document.
 
-**SOAP:** Then when we actually order the food based on the Menu's. Meaning we use proxy classes to call upon the service methods which is done using SOAP.
+**SOAP:** Then when we actually order the food based on the Menus. Meaning we use proxy classes to call upon the service methods which are done using SOAP.
 
-### Generating Proxy files using WSDL document
+### Generating Proxy files using the WSDL document
 
-You can create Apex classes using `WSDL` file but it's no different than making request to REST base call in terms of code. In the body of request, you will have to send XML in SOAP protocol and in response, you should expect XML in SOAP protocol.
+You can create Apex classes using the `WSDL` file but it's no different than making a request to REST base call-in terms of code. In the body of the request, you will have to send XML in SOAP protocol, and in response, you should expect XML in SOAP protocol.
 
 - Go to `Setup -> Apex Classes -> Generate from WSDL`
 
@@ -143,7 +157,7 @@ You can create Apex classes using `WSDL` file but it's no different than making 
 
 <img width="1173" alt="Select WSDL File" src="https://user-images.githubusercontent.com/204423/161051062-41d578bc-a410-4f1b-aa9f-08f6314dfecf.png">
 
-- Now you will show the classes extracted from WSDL file. You get the opportinuty to change the name of classes before classes are created.
+- Now you will show the classes extracted from the WSDL file. You get the opportunity to change the name of classes before classes are created.
 
 <img width="1155" alt="Classes Extrated" src="https://user-images.githubusercontent.com/204423/161051368-cea9ab37-0d88-4867-95a9-03e3ea89a9f6.png">
 
@@ -178,9 +192,11 @@ You can create Apex classes using `WSDL` file but it's no different than making 
 - By making your methods callable through the web, external applications can integrate with Salesforce.
 
 ### Example Use Case
-- You hav an internal app used to make calls to potential leads.
-- You can show the leads data from Salesforce in your app and also get updates in the lead status, if any.
 
+- You have an internal app used to make calls to potential leads.
+
+- You can show the lead data from Salesforce in your app and also get updates on the lead status if any.
+  
 ### [Steps to Expose a Class as a REST Service](https://developer.salesforce.com/docs/atlas.en-us.224.0.apexcode.meta/apexcode/apex_rest.htm)
 
 1.  Define your class as `global`.
@@ -198,7 +214,9 @@ global with sharing class MyRestResource {
 ```
 
 - The base endpoint for Apex REST is https://yourInstance.my.salesforce.com/services/apexrest/.
+  
 - The URL mapping is appended to the base endpoint to form the endpoint for your REST service (https://yourInstance.my.salesforce.com/services/apexrest/Account/*)
+  
 - The URL mapping is case-sensitive and can contain a wildcard character (*).
 
 The following method annotations are available. 
@@ -222,6 +240,7 @@ global with sharing class MySOAPWebService {
 ```
 
 - The external application can call your custom Apex methods as web service operations by consuming the class WSDL file.
+  
 - You can generate this WSDL for your class from the class detail page, accessed from the Apex Classes page in Setup.
 
 ### [Test Your Apex REST Class]()
@@ -231,7 +250,7 @@ global with sharing class MySOAPWebService {
 
 ## Terminologies 
 
-- **OpenAPI:** An api for which you don't need to authorize yourself to make the call. [Spoonacular](https://spoonacular.com/food-api/docs) is one such example.
+- **OpenAPI:** An API for which you don't need to authorize yourself to make the call. [Spoonacular](https://spoonacular.com/food-api/docs) is one such example.
 - Request
 - Response
 - Statuscode
