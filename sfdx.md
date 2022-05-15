@@ -36,6 +36,11 @@
 
 # Salesforce CLI (SFDX)
 
+## Installation
+
+- First you need to install latest version of [Node.js](https://nodejs.org/en/download/).
+- After that you can install [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli).
+
 ## SFDX Command
 
 #### Listing all the commands
