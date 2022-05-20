@@ -7,6 +7,8 @@
   - [Data and Analytics Management: 14%](#data-and-analytics-management-14)
   - [Workflow/Process Automation: 16%](#workflowprocess-automation-16)
 - [References](#references)
+  - [Trailhead](#trailhead)
+  - [Youtube](#youtube)
 
 # [Salesforce Admin Certification](https://trailhead.salesforce.com/en/help?article=Salesforce-Certified-Administrator-Exam-Guide)
 
@@ -25,12 +27,18 @@
 ## [Workflow/Process Automation: 16%](https://www.youtube.com/playlist?list=PL8O9iwxpgTOJF4URmi0xv-InXvyIjSUB7)
 
 # References
+
+## Trailhead
+
 - [Trailhead Admin Trails Mix](https://trailhead.salesforce.com/en/credentials/administrator)
 - [Trailhead Admin Superbadges](https://trailhead.salesforce.com/superbadges)
 - [Trailhead Admin Exam Guide](https://trailhead.salesforce.com/en/help?article=Salesforce-Certified-Administrator-Exam-Guide)
 - [Trailhead Admin Projects](https://trailhead.salesforce.com/projects?roles=admin&sort=NEWEST)
 - [Trailhead Admin Modules](https://trailhead.salesforce.com/modules?roles=admin&sort=NEWEST)
 - [Trailhead Admin Trails](https://trailhead.salesforce.com/trails?roles=admin&sort=NEWEST)
+  
+## Youtube
+
 - [Salesforce Apex Hours | Salesforce Admin Training](https://www.youtube.com/playlist?list=PLaGX-30v1lh1BaUKgXa05gqrOP0vUg_6i)
 - [MyTutorialRack | Learn Salesforce Admin Step by Step](https://www.youtube.com/playlist?list=PLdYQMTciVWO9xjvh1J7SXjhzpnzWvLih4)
 - [Terry's Tidbits | Salesforce Admin Study Group (2022)](https://www.youtube.com/playlist?list=PLPXY38WvYAn7mctOLVSt3LoEpad3DjYnt)
@@ -39,6 +47,7 @@
 - [Salesforce Hulk](https://www.youtube.com/c/SalesforceHulk)
 - [Path to Code](https://www.youtube.com/c/PathtoCode)
 - [Salesforce Techbook | Admin Playlist](https://www.youtube.com/playlist?list=PL-JzyFWuCbkLwrGIkB9Dl2KzoNhnYDJMv)
+- [Letterkenny Salesforce Sessions](https://www.youtube.com/playlist?list=PL8xatqEaRZYe7yd4tLtG8JMALKWOsKMtq)
 
 
 - [Travel Approval Project](https://trailhead.salesforce.com/en/content/learn/trails/build-a-travel-approval-app)
