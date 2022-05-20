@@ -10,7 +10,7 @@
 
 # [Salesforce Admin Certification](https://trailhead.salesforce.com/en/help?article=Salesforce-Certified-Administrator-Exam-Guide)
 
-## [Configuration and Setup: 20%](https://www.youtube.com/playlist?list=PL8O9iwxpgTOI3XSdW0GmASfnok4ovsiQL)
+## [Configuration and Setup: 20%](admin_cert_configuration_and_setup.md)
 
 ## [Object Manager and Lightning App Builder: 20%](admin_cert_object_manager_and_lightning_app_builder.md)
 
