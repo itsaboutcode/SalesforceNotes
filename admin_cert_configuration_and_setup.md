@@ -35,19 +35,19 @@
 
 # [Configuration and Setup: 20%](https://www.youtube.com/playlist?list=PL8O9iwxpgTOI3XSdW0GmASfnok4ovsiQL)
 
-This main top has 6 sub-topics.
+- This top has 6 sub-topics.
 
-1. Describe the information found in **company settings** (fiscal year, business hours, currency management, and default settings).
+1. Describe the information found in **Company Settings** (fiscal year, business hours, currency management, and default settings).
    
-2. Distinguish and understand the user interface's of administration **declarative configuration** (UI Settings, App Menu, List Views, Search Layouts, Gloabl Actions, Lightning App Builder).
+2. Distinguish and understand the administration of **Declarative Configuration** (UI Settings, App Menu, List Views, Search Layouts, Gloabl Actions, Lightning App Builder).
 
-3. Given a **scenario**, demonstrate users' proper **setup and maintenance** (Different org security controls, audit trails, login hours, sessions setting).
+3. Given a **scenario**, demonstrate proper **Setup and Maintenance** of users (Different org security controls, audit trails, login hours, sessions setting).
 
 4. Explain the various organization **Security Controls**.
 
-5. Given a **user request scenario**, apply the appropriate **security controls** based on the features and capabilities of the Salesforce **sharing model**.
+5. Given a **scenario**, apply the appropriate **Security Controls** based on the features and capabilities of the Salesforce **Sharing Model**.
 
-6. Given a **scenario**, determine the appropriate use of a **custom profile or permission set** using the various profile settings and permissions (Profiles and permission sets).
+6. Given a **scenario**, determine the appropriate use of a **Custom Profile or Permission Set** using the various profile settings and permissions (Profiles and permission sets).
 
 
 
