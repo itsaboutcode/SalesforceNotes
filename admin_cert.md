@@ -24,7 +24,7 @@
 
 ## [Data and Analytics Management: 14%](https://www.youtube.com/playlist?list=PL8O9iwxpgTOIXuroTkQKCS7ua_zforKyr)
 
-## [Workflow/Process Automation: 16%](https://www.youtube.com/playlist?list=PL8O9iwxpgTOJF4URmi0xv-InXvyIjSUB7)
+## [Workflow/Process Automation: 16%](admin_cert_workflow_and_process_management.md)
 
 # References
 

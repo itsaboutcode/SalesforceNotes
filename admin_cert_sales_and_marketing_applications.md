@@ -1,4 +1,4 @@
-# Sales and Marketing Applications
+# [Sales and Marketing Applications](https://www.youtube.com/watch?v=sqRtLNPF3zI&list=PL8O9iwxpgTOLVSWZgDt_F3COdNb2gM15p)
 
 # References
 
