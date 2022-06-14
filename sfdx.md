@@ -1,4 +1,5 @@
 - [Salesforce CLI (SFDX)](#salesforce-cli-sfdx)
+  - [Installation](#installation)
   - [SFDX Command](#sfdx-command)
       - [Listing all the commands](#listing-all-the-commands)
       - [Update the SFDX](#update-the-sfdx)
@@ -24,6 +25,9 @@
         - [Step # 04](#step--04)
       - [Deploy Changes to Scratch Org](#deploy-changes-to-scratch-org)
       - [Pull Source from the Scratch Org to Your Project](#pull-source-from-the-scratch-org-to-your-project)
+      - [Generate or Change a Password for a Scratch Org User](#generate-or-change-a-password-for-a-scratch-org-user)
+        - [Generating Password](#generating-password)
+        - [Viewing Password again](#viewing-password-again)
       - [Create Lightening App](#create-lightening-app)
       - [Create LWC](#create-lwc)
         - [VS Code Steps](#vs-code-steps-1)
@@ -254,6 +258,20 @@ sfdx force:source:push --targetusername my-other-scratch-org
 ```js
 sfdx force:source:pull
 ```
+
+#### [Generate or Change a Password for a Scratch Org User](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_passwd.htm)
+
+##### Generating Password
+
+```js
+sfdx force:user:password:generate --targetusername <username>
+```
+##### Viewing Password again
+
+```js
+sfdx force:user:display -u <username>
+```
+
 
 #### [Create Lightening App]()
 
