@@ -6,6 +6,8 @@
 2. Process Builder
 3. Flow
 
+Workflow Rules and Process Builder will [expire](https://admin.salesforce.com/blog/2021/go-with-the-flow-whats-happening-with-workflow-rules-and-process-builder?_ga=2.10245429.1298397712.1655204672-1608855082.1652624987) in future. So make sure you are using Salesforce Flow.
+
 ## Why you need automation
 
 Each business is unique and may have some tasks which must be done when a certain action took place in your org. For example, when you close a deal, you should generate an email, which congratulate the account etc and it must be done. Since it's required step and require little to no input from user, it's ideal case for automation.
@@ -13,8 +15,12 @@ Each business is unique and may have some tasks which must be done when a certai
 ## Flow
 
 - Flows can be better described as visual coding—they’re declarative, but they require that you understand some programming concepts like variables and how logic works.
-- Flows are useful for two major use cases
+- Flows are useful for two major use cases.
+- Salesforce Flow are **two** point-and-click automation tools: **Flow Builder**, which lets you build flows, and **Process Builder**, which lets you edit existing processes.
 
+- **Salesforce Flow** is the name of the **product**.
+- **Flow Builder and Process Builder** are the names of the **tools**.
+- Use Flow Builder to **make flows**; use Process Builder to refine existing **processes**.
 
 ### Behind-the-Scenes Automation
 
@@ -75,8 +81,29 @@ If your business process requires **input from a user**, you can use a:
 
 ### Process Builder
 
+Process Builder is a point-and-click tool that lets you easily automate **if/then** business processes and see a graphical representation of your process as you build.
+
 - It's 2nd automation tool in Salesforce. 
 - It was build after **Workflow Rules**.
+
+#### Components of a Process
+
+Every process consists of 
+
+- A **trigger**. 
+- At least one **criteria** node.
+- At least one **action**.
+
+You can configure **immediate actions or schedule actions** to be executed at a **specific time**.
+
+
+##### Trigger: Identify When the Process Should Run
+
+##### Criteria: Determine Whether or Not to Execute Actions
+
+##### Actions: What the Process Should Do
+
+
 - Actions of Process Builder are
 
 1. Create a record
@@ -143,4 +170,5 @@ There is one thing which workflow can do, but process build can't. Workflow can 
 - [Trail: Build Flows with Flow Builder](https://trailhead.salesforce.com/en/content/learn/trails/build-flows-with-flow-builder)
 - [Trail: Automate Your Business Processes with Salesforce Flow](https://trailhead.salesforce.com/en/content/learn/trails/automate_business_processes)
 - [Module: Flow Concepts: Quick Look](https://trailhead.salesforce.com/en/content/learn/modules/flow-concepts-quick-look)
+- [Guide: Automate Your Business Processes](https://help.salesforce.com/s/articleView?id=sf.extend_click_process.htm&type=5)
 
