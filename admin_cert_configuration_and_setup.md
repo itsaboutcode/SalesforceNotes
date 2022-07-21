@@ -51,7 +51,11 @@
 
 
 
-## App Page vs Home Page
+## [App Page vs Home Page](https://www.youtube.com/watch?v=mB3mDM4INnY&list=PL8O9iwxpgTOI3XSdW0GmASfnok4ovsiQL&index=3)
+
+- **Record Pages** are special because you can only have one per object, per app. When a user first opens a record page they see the **Search Layout, (List View)** then the **Record Detail** when they open a single record.
+
+- **Home Page** is kind of like the standard Salesforce Home page for all Apps, except it doesn't actually have to be included in all Apps.
 
 ## Themes and Branding
 
